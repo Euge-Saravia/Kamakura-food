@@ -1,5 +1,4 @@
 //DEBE buscar los productos por los filtros
-
 import { displayMenu } from "./menu.js";
 
 function filterProducts(filterButtons, products) {

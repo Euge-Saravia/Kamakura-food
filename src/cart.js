@@ -11,7 +11,6 @@ function addToCart(product) {
         product.subtotal = product.quantity * product.price
         cart.push(product);
     }
-    displayCart();
 }
 
 function increaseQuantity(product) {
@@ -52,8 +51,12 @@ function cartTotal() {
     return total;
 }
 
+function clearCart() {
+    cart.length = 0;
+}
 
 
-export { addToCart, cart, cartTotal, decreaseQuantity, increaseQuantity, updateSubtotal, removeProduct };
+
+export { addToCart, cart, cartTotal, decreaseQuantity, increaseQuantity, updateSubtotal, removeProduct, clearCart };
 
 

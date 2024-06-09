@@ -1,5 +1,6 @@
 //DEBE imprimir en pantalla la información de filtros.
 import { filterProducts } from "./searcher.js";
+import { setupAddToCartButtons } from "./events.js";
 
 function setUpFiltersButtons(filters) {
     let filterContainer = document.querySelector(".filters-container");
@@ -21,11 +22,11 @@ function applyFilter(products) {
 
 //DEBE imprimir en pantalla los productos, con su Título, descripción y precio en € y botón de añadir.
 function displayMenu(products) {
-    const productsContainer = document.querySelector('#products');
-    productsContainer.innerHTML = '';
-    products.forEach(product => {
-        const productContainer = document.createElement('div');
-        productContainer.classList.add('product-container');
+    const productsContainer = document.querySelector("#products");
+    productsContainer.innerHTML = "";
+    products.forEach((product) => {
+        const productContainer = document.createElement("div");
+        productContainer.classList.add("product-container");
         productContainer.innerHTML = `
                         <h3>${product.name}</h3>
                         <p>${product.description}</p>
@@ -33,12 +34,11 @@ function displayMenu(products) {
                             <h5>${product.price} €</h5>
                             <button class="add-button" id=${product.id}>Añadir</button>
                         </div>
-                        `
+                        `;
 
         productsContainer.appendChild(productContainer);
-
-    })
-
+    });
+    setupAddToCartButtons();
 }
 
 
