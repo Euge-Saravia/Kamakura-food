@@ -4,9 +4,8 @@ import { cart, cartTotal } from './cart.js';
 function showReceipt() {
     const receiptContainer = document.getElementById('receipt-container');
     const totalElement = document.getElementById("receipt-total");
-    
-    clearReceipt()
 
+    clearReceipt()
     if (cart.length === 0) {
         const messageElem = document.createElement('h3');
         messageElem.innerHTML = `<h3>Aun no has escogido tu orden</h3>`;

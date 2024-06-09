@@ -1,8 +1,8 @@
-import { products } from '../assets/data/data.js';
+import { products, filters } from '../assets/data/data.js';
 import { addToCart } from './cart.js';
 import { displayCart } from './cartUI.js';
 import { showReceipt } from './receipt.js';
-import { displayMenu } from './menu.js';
+import { displayMenu, setUpFiltersButtons, applyFilter } from './menu.js';
 import { displayAlert } from './alert.js';
 
 
@@ -66,18 +66,21 @@ function toggleDisplay(element) {
 }
 
 function endPayment() {
-    const payButton = document.querySelector('#pay-button')
-    payButton.addEventListener('click', displayAlert)
+    const payButton = document.querySelector('#pay-button');
+    payButton.addEventListener('click', displayAlert);
 }
 
 
-
 displayMenu(products);
+setUpFiltersButtons(filters);
+applyFilter(products);
 setupCartButton();
 setupAddToCartButtons();
 setUpCheckoutButton();
 displayCart();
 closeReceipt();
 endPayment();
+
+
 
 
