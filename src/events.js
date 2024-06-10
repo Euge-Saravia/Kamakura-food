@@ -65,8 +65,7 @@ function endPayment() {
     payButton.addEventListener('click', displayAlert);
 }
 
-
-displayMenu(products);
+document.addEventListener('DOMContentLoaded', () => {displayMenu(products);
 setUpFiltersButtons(filters);
 applyFilter(products);
 setupCartButton();
@@ -74,7 +73,8 @@ setUpCheckoutButton();
 displayCart();
 closeReceipt();
 endPayment();
+})
 
 
 
-
+export { setupAddToCartButtons }
