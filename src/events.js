@@ -77,4 +77,4 @@ endPayment();
 
 
 
-export { setupAddToCartButtons }
+export { setupAddToCartButtons, toggleDisplay }
